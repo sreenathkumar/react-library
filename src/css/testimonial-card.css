@@ -1,0 +1,73 @@
+.cards {
+  position: relative;
+  width: 100%;
+  height: auto;
+  background-color: var(--main-color);
+  border-radius: 10px;
+}
+.cards:nth-child(2) {
+  background-color: var(--secondary-color);
+}
+.cards:nth-child(2) .comment p {
+  color: white;
+}
+.cards .icon {
+  border: 1px solid white;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  right: -16px;
+  top: -22px;
+  background: white;
+}
+.icon svg {
+  font-size: 25px;
+  color: var(--secondary-color);
+}
+.cards:nth-child(2) > .icon i {
+  font-size: 25px;
+  color: var(--main-color);
+}
+.comment {
+  padding: 20px;
+}
+.comment p {
+  font-family: var(--para-font);
+  font-size: var(--fs-500);
+  color: var(--ter-color);
+}
+.cards:nth-child(2) > .comment {
+  color: white;
+}
+.clients {
+  display: flex;
+  flex-direction: row;
+  padding: 20px;
+  background: white;
+  border-radius: 10px;
+}
+.clients img {
+  height: 50px;
+  width: 50px;
+  margin-right: 1em;
+}
+.clients .info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+.clients .client-name {
+  font-size: var(--fs-400);
+  font-family: var(--heading-font);
+  color: var(--ter-color);
+}
+.clients .client-profession {
+  font-size: 0.7rem;
+  font-family: var(--para-font);
+  color: #707070;
+}

@@ -1,0 +1,85 @@
+#counter {
+  background: #e8e8e8;
+}
+@media (min-width: 769px) {
+  #counter {
+    padding: 5rem 0px;
+  }
+}
+.counter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+
+.counter-item-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--secondary-color);
+  padding: 1rem;
+  flex-grow: 1;
+  border-radius: 5px;
+}
+
+.counter-item-container img {
+  width: 50%;
+}
+
+.count_texts {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin-left: 1em;
+}
+.count {
+  font-size: var(--fs-600);
+  color: white;
+  font-family: var(--heading-font);
+  font-weight: 700;
+  margin: 0em;
+}
+.count-title {
+  font-size: var(--fs-500);
+  font-family: var(--heading-font);
+  font-weight: 500;
+  margin: 0.5em 0em 0em;
+}
+
+/**============================================
+*** Style For Extra Small Device
+***==========================================*/
+@media (max-width: 281px) {
+  .counter-item-container {
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+
+  .counter-item-container img {
+    margin: 0px;
+    width: 100%;
+  }
+  .count_texts {
+    align-items: center;
+  }
+  .count {
+    font-size: clamp(0.8rem, 8vw, 1.5rem);
+    margin-top: 0.5em;
+  }
+  .count-title {
+    font-size: clamp(0.8rem, 8vw, 1.5rem);
+    font-weight: 600;
+    margin: 0.25em 0em 0em;
+  }
+}
+/**============================================
+*** Style For Extra Small Device
+***==========================================*/
+@media (min-width: 310px) {
+  .counter-item-container {
+    padding: 1em 1.5em;
+  }
+}

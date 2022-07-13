@@ -1,0 +1,146 @@
+:root {
+  --main-color: #fdde05;
+  --secondary-color: rgb(255 69 78);
+  --ter-color: #131211;
+  --heading-font: "Arvo";
+  --para-font: "Raleway";
+
+  --fs-xl: clamp(0.5rem, 8vw, 2.5rem);
+  --fs-600: 1.5rem;
+  --fs-500: 1.25rem;
+  --fs-400: 1rem;
+}
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+/*=============================
+* Nav Style -- Bigger devices
+**=============================*/
+
+header {
+  background-color: var(--main-color);
+  z-index: 1000;
+  position: relative;
+}
+a {
+  text-decoration: none;
+}
+@media (min-width: 769px) {
+  section {
+    margin-bottom: 5rem;
+  }
+}
+.header-container {
+  max-width: 1366px;
+  margin: auto;
+  padding: 0px 64px;
+}
+.container {
+  max-width: 1366px;
+  margin: auto;
+  padding: 0px 64px;
+}
+
+.logo {
+  height: 60px;
+  width: auto;
+}
+
+.nav-link {
+  font-size: 1em;
+  font-family: var(--heading-font);
+  color: var(--ter-color);
+  text-decoration: none;
+  padding: 0px 16px;
+}
+.active {
+  color: var(--secondary-color);
+}
+#toggleActive {
+  display: none;
+}
+.navbar {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0px;
+}
+
+/* =========================================
+** Smaller device style
+** =========================================*/
+
+@media (max-width: 768px) {
+  #root {
+    width: 100%;
+  }
+  .container {
+    padding: 5rem 5%;
+  }
+  .header-container {
+    padding: 0px 5%;
+  }
+  .menuToggle {
+    width: 40px;
+    height: 40px;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  .menuToggle::before,
+  .menuToggle::after {
+    content: "";
+    position: absolute;
+    width: calc(48px / 2);
+    height: calc(48px / 16);
+    background: var(--secondary-color);
+    transition: all 0.5s;
+  }
+
+  .menuToggle::before {
+    transform: translateY(calc(40px / -5));
+    box-shadow: 0 calc(40px / 5) var(--secondary-color);
+  }
+  #toggleActive:checked ~ .menuToggle::before {
+    transform: translateY(0px) rotate(45deg);
+    box-shadow: 0 0 var(--secondary-color);
+  }
+
+  .menuToggle::after {
+    transform: translateY(calc(40px / 5));
+  }
+
+  #toggleActive:checked ~ .menuToggle::after {
+    transform: translateY(0px) rotate(-45deg);
+  }
+
+  .mobile-menu {
+    background: var(--main-color);
+    position: absolute;
+    top: 100%;
+    right: 0px;
+    /* transform: translateX(100%); */
+    overflow: hidden;
+    height: 0px;
+    transition: height 0.5s;
+  }
+  #toggleActive:checked ~ .mobile-menu {
+    height: 200px;
+    transition: height 0.5s;
+  }
+  .mobile-menu-container {
+    display: flex;
+    flex-direction: column;
+    padding: 16px 24px;
+  }
+  .nav-link {
+    padding: 8px 0px;
+  }
+}

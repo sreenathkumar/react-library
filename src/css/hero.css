@@ -1,0 +1,138 @@
+#hero .container {
+  padding: 0rem;
+}
+
+.slider-container {
+  display: flex;
+  flex-direction: column;
+}
+.slide {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.slide .slide-image img {
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+.slide .slide-image {
+  width: 100%;
+  order: 1;
+}
+.slide .slide-texts {
+  order: 2;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  height: 100%;
+  padding: 0px 5%;
+  background-color: rgba(253, 224, 5, 0.5);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-family: var(--main-font);
+}
+
+.slide-texts p {
+  font-size: 1rem;
+  font-family: var(--para-font);
+  color: var(--ter-color);
+  margin: 1em 3em 1em 0px;
+}
+.slide-texts h1 {
+  font-size: var(--fs-xl);
+  font-weight: 700;
+  color: var(--ter-color);
+  margin: 0px;
+  font-family: var(--heading-font);
+}
+@media (max-width: 300px) {
+  .logo {
+    width: 33%;
+    height: auto;
+  }
+  .slide .slide-image {
+    height: 50vh;
+  }
+  .slide-texts p {
+    font-size: clamp(0.5rem, 1vw, 0.8rem);
+    margin: 0.5rem 0px;
+  }
+  .slide-texts h1 {
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 768px) {
+  #hero .container {
+    padding: 0px 64px;
+  }
+  #hero {
+    margin-top: 5rem;
+  }
+  .slider-container {
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+  }
+  .slide {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    min-height: 470px;
+  }
+  .slide .slide-image {
+    order: 2;
+    /* min-height: 70vh; */
+    width: 50%;
+  }
+  .slide .slide-texts {
+    order: 1;
+    position: relative;
+    height: auto;
+    padding: 40px;
+    background: var(--main-color);
+    width: 50%;
+  }
+
+  .slide-texts p {
+    font-size: var(--fs-500);
+  }
+  .slider-nav {
+    display: flex;
+    justify-content: center;
+    padding: 10px 0px;
+  }
+  .slider-indicator {
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(0, 0, 0, 0.3);
+    margin: 0px 10px;
+  }
+  .active-slide {
+    background: rgba(0, 0, 0, 0.7);
+  }
+}
+@media (max-width: 196px) {
+  .menuToggle {
+    width: 30px;
+    height: 30px;
+  }
+  .menuToggle::after {
+    transform: translateY(calc(25px / 5));
+    width: calc(32px / 2);
+  }
+  .menuToggle::before,
+  .menuToggle::after {
+    width: calc(32px / 2);
+    height: calc(32px / 16);
+  }
+  .menuToggle::before {
+    transform: translateY(calc(25px / -5));
+    box-shadow: 0 calc(25px / 5) var(--secondary-color);
+  }
+}
