@@ -19,6 +19,7 @@
   list-style: none;
   padding: 0px;
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   gap: 0.5rem;
 }
