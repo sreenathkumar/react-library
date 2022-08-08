@@ -1,15 +1,15 @@
 import "../css/book-card.css";
-import bookThumbnail from "../images/bookThumbnail.png";
+import { Link } from "react-router-dom";
 
 function BookCard(props) {
   return (
     <div className="card-container">
       <div className="img-container">
-        <a href="/">
+        <Link to={props.title.replace(/ /g, "-") + "/ID=" + props.isbn}>
           <div className="builder-image-sizer image-sizer">
             <img alt="book-thumbnail" src={props.img} className="image" />
           </div>
-        </a>
+        </Link>
       </div>
       <a href="/" className="book-title">
         {props.title}

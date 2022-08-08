@@ -1,0 +1,28 @@
+/* Style for small devices */
+
+.book-info-container {
+  display: flex;
+  flex-direction: column;
+}
+.img-col img {
+  width: 250px;
+  height: 350px;
+  margin: auto;
+  display: block;
+  margin-bottom: 1.5rem;
+}
+.info-col {
+  display: flex;
+  flex-direction: column;
+}
+.info-col h1 {
+  display: block;
+  font-size: var(--fs-600);
+  font-family: var(--heading-font);
+  text-align: center;
+}
+.info-col p {
+  font-family: var(--para-font);
+  font-size: var(--fs-400);
+  text-align: center;
+}

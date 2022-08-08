@@ -13,21 +13,21 @@ function Header() {
             <label className="menuToggle" htmlFor="toggleActive"></label>
             <div className="mobile-menu" id="mobile-menu-panel">
               <div className="mobile-menu-container">
-                <a className="nav-link  active" href="/">
+                <Link className="nav-link  active" to="/">
                   Home
-                </a>
-                <a className="nav-link" href="#">
+                </Link>
+                <Link className="nav-link" to="/">
                   About Us
-                </a>
-                <a className="nav-link" href="#">
+                </Link>
+                <Link className="nav-link" to="/">
                   Contact Us
-                </a>
-                <a className="nav-link" href="#">
+                </Link>
+                <Link className="nav-link" to="/">
                   Categories
-                </a>
-                <a className="nav-link" href="#">
+                </Link>
+                <Link className="nav-link" to="/">
                   Blog
-                </a>
+                </Link>
               </div>
             </div>
           </div>

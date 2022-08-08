@@ -1,3 +1,11 @@
+#counter {
+  background: #e8e8e8;
+}
+@media (min-width: 769px) {
+  #counter {
+    padding: 5rem 0px;
+  }
+}
 .search-container {
   display: flex;
   flex-direction: column;
@@ -18,16 +26,15 @@
 }
 .search-block input {
   padding: 1rem 1rem;
-  min-width: 300px;
   width: 100%;
   outline: none;
-  font-family: var(--para-font);
+  font-family: var(--heading-font);
   font-size: var(--fs-400);
   border: 1px solid var(--secondary-color);
 }
 .search-block button {
   padding: 1rem 1.5rem;
-  font-family: var(--para-font);
+  font-family: var(--heading-font);
   font-size: var(--fs-400);
   font-weight: 500;
   color: var(--ter-color);
@@ -44,4 +51,46 @@
 .inputNresult {
   width: 40%;
   margin-right: 2rem;
+}
+.hide-result {
+  display: none;
+}
+.search-result {
+  margin-top: 0.5rem;
+  padding: 0.5rem 1rem;
+  background-color: var(--secondary-color);
+  list-style: none;
+  transition: ease 0.5s;
+}
+.search-result li {
+  margin: 0.5rem 0rem;
+  text-align: left;
+  cursor: pointer;
+}
+.search-result li a {
+  font-family: var(--heading-font);
+  font-size: var(--fs-400);
+  color: var(--ter-color);
+}
+.search-result li a:hover {
+  color: white;
+}
+
+/*==========================
+** Style for small device
+============================*/
+
+@media (max-width: 450px) {
+  .search-block {
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .inputNresult {
+    margin: 0rem 0rem 2rem 0rem;
+    width: 100%;
+  }
+  .search-block input {
+    text-align: center;
+  }
 }
