@@ -278,7 +278,7 @@ function Home() {
   const handleLoadMore = () => {
     setItemsPerPage(itemsPerPage + 5);
   };
-  console.log(bestBooks);
+
   return (
     <>
       <Hero />
@@ -294,11 +294,21 @@ function Home() {
           <div className="book-cards">
             {bestBooks.map((item) => (
               <BookCard
-                key={item.primary_isbn10}
-                isbn={item.primary_isbn10}
+                key={
+                  item.primary_isbn13
+                    ? item.primary_isbn13
+                    : item.primary_isbn10
+                }
+                isbn={
+                  item.primary_isbn13
+                    ? item.primary_isbn13
+                    : item.primary_isbn10
+                }
                 img={item.book_image}
                 author={item.author}
                 title={item.title}
+                des={item.description}
+                buyUrl={item.amazon_product_url}
               />
             ))}
           </div>
@@ -319,13 +329,20 @@ function Home() {
             {currentItem.map((item) => (
               <BookCard
                 key={
-                  item.primary_isbn10
-                    ? item.primary_isbn10
-                    : item.primary_isbn13
+                  item.primary_isbn13
+                    ? item.primary_isbn13
+                    : item.primary_isbn10
+                }
+                isbn={
+                  item.primary_isbn13
+                    ? item.primary_isbn13
+                    : item.primary_isbn10
                 }
                 img={item.book_image}
                 author={item.author}
                 title={item.title}
+                des={item.description}
+                buyUrl={item.amazon_product_url}
               />
             ))}
           </div>

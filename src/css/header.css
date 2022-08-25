@@ -16,6 +16,10 @@
   box-sizing: border-box;
 }
 
+.hide-element {
+  display: none;
+}
+
 /*=============================
 * Nav Style -- Bigger devices
 **=============================*/
@@ -131,7 +135,7 @@ a {
     transition: height 0.5s;
   }
   #toggleActive:checked ~ .mobile-menu {
-    height: 200px;
+    height: auto;
     transition: height 0.5s;
   }
   .mobile-menu-container {

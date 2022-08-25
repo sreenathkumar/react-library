@@ -1,4 +1,5 @@
 import "../css/search-book.css";
+import { Link } from "react-router-dom";
 import { useState } from "react";
 
 function SearchBook(props) {
@@ -47,7 +48,6 @@ function SearchBook(props) {
       res.then((data) => {
         setQueryResult(data);
       });
-      console.log(queryResult);
     }
   }
 
@@ -71,8 +71,8 @@ function SearchBook(props) {
           >
             {queryResult.map((item) => (
               <li key={item.id}>
-                <a
-                  href={
+                <Link
+                  to={
                     "/" +
                     item.volumeInfo.title.replace(/ /g, "-") +
                     "/ID=" +
@@ -80,7 +80,7 @@ function SearchBook(props) {
                   }
                 >
                   {item.volumeInfo.title}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>
