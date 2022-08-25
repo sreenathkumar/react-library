@@ -13,10 +13,10 @@ function Subfooter() {
               Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
               nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
             </p>
-            <a href="">Read More</a>
+            <a href="/">Read More</a>
             <div className="icon-list">
               <div className="s-icon">
-                <a>
+                <a href="/">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     aria-hidden="true"
@@ -34,7 +34,7 @@ function Subfooter() {
                 </a>
               </div>
               <div className="s-icon">
-                <a>
+                <a href="/">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     aria-hidden="true"
@@ -52,7 +52,7 @@ function Subfooter() {
                 </a>
               </div>
               <div className="s-icon">
-                <a>
+                <a href="/">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     aria-hidden="true"
@@ -70,7 +70,7 @@ function Subfooter() {
                 </a>
               </div>
               <div className="s-icon">
-                <a>
+                <a href="/">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     aria-hidden="true"
@@ -98,13 +98,13 @@ function Subfooter() {
           <div className="quick-links">
             <h3 className="block-title">Quick Links</h3>
             <div className="link-list">
-              <a href="#">About Us</a>
+              <a href="/">About Us</a>
               <span></span>
-              <a href="#">Contact Us</a>
+              <a href="/">Contact Us</a>
               <span></span>
-              <a href="#">Popular Books</a>
+              <a href="/">Popular Books</a>
               <span></span>
-              <a href="#">Reviews</a>
+              <a href="/">Reviews</a>
             </div>
           </div>
         </div>

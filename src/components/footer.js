@@ -4,14 +4,14 @@ function Footer() {
   return (
     <footer>
       <div className="copyright">
-        <a href="sreenathkumar.com" className="owner">
+        <a href="/" className="owner">
           Sreenath Kumar
         </a>
         2020 All rights reserved.
       </div>
       <div className="footer-icons">
         <div className="fs-icon">
-          <a>
+          <a href="/">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               aria-hidden="true"
@@ -29,7 +29,7 @@ function Footer() {
           </a>
         </div>
         <div className="fs-icon">
-          <a>
+          <a href="/">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               aria-hidden="true"
@@ -47,7 +47,7 @@ function Footer() {
           </a>
         </div>
         <div className="fs-icon">
-          <a>
+          <a href="/">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               aria-hidden="true"
@@ -65,7 +65,7 @@ function Footer() {
           </a>
         </div>
         <div className="fs-icon">
-          <a>
+          <a href="/">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               aria-hidden="true"
