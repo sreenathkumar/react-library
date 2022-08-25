@@ -177,7 +177,7 @@ function Home() {
   }
 
   const [currentPage, setCurrentPage] = useState(1);
-  const [itemsPerPage, setItemsPerPage] = useState(18);
+  const itemsPerPage = 18;
   const [maxPage, setMaxPage] = useState(pageNumberLimit);
   const [minPage, setMinPage] = useState(0);
 
@@ -275,9 +275,9 @@ function Home() {
     );
   }
 
-  const handleLoadMore = () => {
-    setItemsPerPage(itemsPerPage + 5);
-  };
+  // const handleLoadMore = () => {
+  //   setItemsPerPage(itemsPerPage + 5);
+  // };
 
   return (
     <>
