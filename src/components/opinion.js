@@ -1,5 +1,7 @@
 import "../css/opinion.css";
 
+import Form from "./Form";
+
 function Opinion() {
   return (
     <section id="opinion">
@@ -19,54 +21,7 @@ function Opinion() {
               try our best to include the books in our library.
             </p>
           </div>
-          <div className="form-container">
-            <h2 className="form-heading">Get in Touch</h2>
-            <span className="form-underline"></span>
-            <form action="">
-              <input
-                className="form-input"
-                type="email"
-                name="email"
-                id="email"
-                placeholder="Email Address"
-                required
-              />
-              <div className="inline-input">
-                <input
-                  className="form-input"
-                  type="text"
-                  name="first-name"
-                  id="first-name"
-                  placeholder="First Name"
-                  required
-                />
-                <input
-                  className="form-input"
-                  type="text"
-                  name="last-name"
-                  id="last-name"
-                  placeholder="Last Name"
-                  required
-                />
-              </div>
-              <input
-                className="form-input"
-                type="text"
-                name="subject"
-                placeholder="Subject"
-                id="subject"
-              />
-              <textarea
-                className="form-input"
-                name="comment"
-                id="comment"
-                placeholder="Your Words"
-                cols="30"
-                rows="4"
-              ></textarea>
-              <button type="submit">Submit</button>
-            </form>
-          </div>
+          <Form />
         </div>
       </div>
     </section>

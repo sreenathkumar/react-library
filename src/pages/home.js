@@ -89,8 +89,8 @@ function Home() {
     async function getBestBooksActive(q) {
       let bestBooksLists = await fetch(
         "https://api.nytimes.com/svc/books/v3/lists.json?list=" +
-          q +
-          "&api-key=GaESzDWgFVIjf5U4lLsTKDpm4N6uOI2m"
+        q +
+        "&api-key=GaESzDWgFVIjf5U4lLsTKDpm4N6uOI2m"
       )
         .then((res) => res.json())
         .then((res) => res.results);
@@ -198,9 +198,8 @@ function Home() {
           key={"p" + number}
           id={number}
           onClick={handleClick}
-          className={`ab-li ${
-            currentPage === number ? "paginition-active" : null
-          }`}
+          className={`ab-li ${currentPage === number ? "paginition-active" : null
+            }`}
         >
           {number}
         </li>
@@ -326,6 +325,7 @@ function Home() {
           </div>
           <CategorySlider list={null}></CategorySlider>
           <div className="book-cards">
+
             {currentItem.map((item) => (
               <BookCard
                 key={

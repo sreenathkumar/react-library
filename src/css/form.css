@@ -1,0 +1,68 @@
+.form-container {
+   background: var(--main-color);
+   width: 100%;
+   padding: 2rem;
+   margin-top: 2.5rem;
+   max-width: 450px;
+   border-radius: 5px;
+   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+.form-heading {
+   font-family: var(--para-font);
+   font-size: 1em;
+   color: var(--ter-color);
+   text-align: center;
+}
+form,
+.inline-input {
+   display: flex;
+   flex-direction: column;
+   row-gap: 20px;
+}
+
+.form-input {
+   border: none;
+   border-radius: 3px;
+   padding: 0.7rem 1rem;
+   font-family: var(--para-font);
+   font-size: var(--fs-400);
+   color: var(--ter-color);
+   width: 100%;
+}
+form button {
+   width: 100%;
+   font-size: var(--fs-400);
+   font-family: var(--heading-font);
+   font-weight: 500;
+   border: none;
+   border-radius: 3px;
+   padding: 0.7rem 1rem;
+   color: white;
+   background: var(--secondary-color);
+}
+.form-underline {
+   display: block;
+   width: 30px;
+   height: 5px;
+   background: var(--secondary-color);
+   margin: 10px auto 30px auto;
+   border-radius: 50px;
+}
+@media (min-width: 768px) {
+   .form-container {
+      margin-top: 0rem;
+   }
+   .inline-input {
+      display: flex;
+      flex-direction: row;
+   }
+   .inline-input .form-input {
+      width: 50%;
+   }
+   .inline-input input :first-child {
+      margin-right: 0.5rem;
+   }
+   .inline-input input:last-child {
+      margin-left: 0.5rem;
+   }
+}

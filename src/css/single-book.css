@@ -1,92 +1,92 @@
 /* Style for small devices */
 
 .book-info-container {
-  display: flex;
-  flex-direction: column;
+   display: flex;
+   flex-direction: column;
 }
 .img-col img {
-  width: 250px;
-  height: 350px;
-  margin: auto;
-  display: block;
-  margin-bottom: 1.5rem;
+   width: 250px;
+   height: 350px;
+   margin: auto;
+   display: block;
+   margin-bottom: 1.5rem;
 }
 .info-col {
-  display: flex;
-  flex-direction: column;
+   display: flex;
+   flex-direction: column;
 }
 .info-col h1,
 .info-col p {
-  margin-bottom: 1rem;
+   margin-bottom: 1rem;
 }
 .info-col h1 {
-  display: block;
-  font-size: var(--fs-600);
-  font-family: var(--heading-font);
-  text-align: center;
-  color: var(--secondary-color);
+   display: block;
+   font-size: var(--fs-600);
+   font-family: var(--heading-font);
+   text-align: center;
+   color: var(--secondary-color);
 }
 .info-col p {
-  font-family: var(--para-font);
-  font-size: var(--fs-500);
-  color: var(--ter-color);
-  text-align: center;
+   font-family: var(--para-font);
+   font-size: var(--fs-500);
+   color: var(--ter-color);
+   text-align: center;
 }
 .info-col p span {
-  font-weight: 600;
+   font-weight: 600;
 }
 .button-group {
-  display: flex;
-  justify-content: space-between;
+   display: flex;
+   justify-content: space-between;
 }
 .button-group a {
-  padding: 1rem 1.5rem;
-  font-family: var(--heading-font);
-  font-size: 1rem;
-  color: white;
-  background-color: var(--secondary-color);
-  margin: 1rem 0rem;
+   padding: 1rem 1.5rem;
+   font-family: var(--heading-font);
+   font-size: 1rem;
+   color: white;
+   background-color: var(--secondary-color);
+   margin: 1rem 0rem;
 }
 
 /*=============================
 * Style -- Bigger devices
 **=============================*/
 @media (min-width: 786px) {
-  .container {
+   /* .container {
     margin: 5rem 0rem;
-  }
-  .book-info-container {
-    flex-direction: row;
-  }
-  .img-col img {
-    margin-bottom: 0rem;
-  }
-  .info-col {
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: space-between;
-    margin-left: 3rem;
-    max-width: 600px;
-  }
-  .info-head {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-  }
-  .info-head p {
-    text-align: left;
-  }
-  .short-description {
-    max-width: 550px;
-  }
-  .short-description p,
-  .info-col h1 {
-    text-align: left;
-  }
-  .button-group {
-    gap: 2rem;
-  }
-  .button-group a {
-    margin: 0rem;
-  }
+  } */
+   .book-info-container {
+      flex-direction: row;
+   }
+   .img-col img {
+      margin-bottom: 0rem;
+   }
+   .info-col {
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: space-between;
+      margin-left: 3rem;
+      max-width: 600px;
+   }
+   .info-head {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+   }
+   .info-head p {
+      text-align: left;
+   }
+   .short-description {
+      max-width: 550px;
+   }
+   .short-description p,
+   .info-col h1 {
+      text-align: left;
+   }
+   .button-group {
+      gap: 2rem;
+   }
+   .button-group a {
+      margin: 0rem;
+   }
 }

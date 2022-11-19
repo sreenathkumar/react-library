@@ -1,0 +1,54 @@
+.all-container {
+   display: flex;
+   justify-content: center;
+   flex-wrap: wrap;
+   gap: 2rem;
+   padding: 5rem 0rem;
+}
+a {
+   text-decoration: none;
+}
+.cat-card-container {
+   display: flex;
+   flex-direction: row;
+   align-items: center;
+   background: transparent;
+   border: 1px solid var(--secondary-color);
+   padding: 10px 20px;
+   gap: 10px;
+   width: auto;
+
+   text-align: left;
+   transition: all 0.2s ease-in;
+   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+.cat-card-container:hover {
+   transform: translatey(5px);
+}
+.cat-img-container img {
+   width: 50px;
+   height: 50px;
+   border-radius: 10px;
+   display: block;
+}
+.cat-content-container {
+   display: flex;
+   align-items: center;
+}
+.cat-content-container h3 {
+   color: var(--secondary-color);
+   font-family: var(--heading-font);
+   font-weight: normal;
+   font-size: var(--fs-400);
+}
+.cat-contents p {
+   font-family: var(--heading-font);
+   font-size: 12px;
+   color: var(--ter-color);
+   margin: 0;
+}
+.cat-icon-container svg {
+   margin-left: 2.5rem;
+   width: 20px;
+   height: 20px;
+}

@@ -1,12 +1,14 @@
-import "../css/book-card.css";
 import { Link } from "react-router-dom";
+import "../css/book-card.css";
 
 function BookCard(props) {
+
+
   return (
     <div className="card-container">
       <div className="img-container">
         <Link
-          to={props.title.replace(/ /g, "-") + "/ID=" + props.isbn}
+          to={"../" + props.title.replace(/ /g, "-") + "/ID=" + props.isbn}
           state={{
             buyUrl: props.buyUrl,
             imgUrl: props.img,
@@ -27,9 +29,9 @@ function BookCard(props) {
       <a href="/" className="author-name">
         {props.author}
       </a>
-      <div className="review-bar-container">
-        <div className="box"></div>
-      </div>
+      {/* <div className="review-bar-container">
+        <div className="box" ></div>
+      </div> */}
     </div>
   );
 }

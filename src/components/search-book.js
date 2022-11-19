@@ -22,10 +22,24 @@ function SearchBook(props) {
       .then((data) => {
         return data.items;
       });
-    return response;
+    return console.log(response);
   }
 
+  function dbounce(fn) {
+    let timer;
+    return function (...args) {
+      timer && clearTimeout(timer);
+      timer = setTimeout(() => {
+        fn(...args);
+      }, 500);
+    };
+  }
+  const debouncedFuction = dbounce((e) => {
+    handleInput(e);
+  });
+
   function handleInput(e) {
+    console.log("inside handleInput");
     setSearchQuery(e.target.value.trim());
 
     // fetch(
@@ -52,7 +66,7 @@ function SearchBook(props) {
   }
 
   function handleSearch() {
-    getQueryResult();
+    getQueryResult(10);
   }
 
   return (
@@ -62,7 +76,9 @@ function SearchBook(props) {
         <div className="inputNresult">
           <input
             placeholder="Enter Title, Author, ISBN"
-            onChange={handleInput}
+            onChange={(e) => {
+              debouncedFuction(e);
+            }}
           ></input>
           <ul
             className={

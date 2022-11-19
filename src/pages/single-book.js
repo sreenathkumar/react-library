@@ -19,7 +19,7 @@ function SingleBook() {
 
   useEffect(() => {
     async function getTheBook() {
-      let url = "https://www.googleapis.com/books/v1/volumes/?q=" + id;
+      let url = "https://www.googleapis.com/books/v1/volumes?q=+isbn:" + id;
       await fetch(url)
         .then((res) => {
           return res.json();

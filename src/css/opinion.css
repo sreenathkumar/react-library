@@ -2,86 +2,40 @@
 * Opinion Style
 */
 .opinion {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  width: 100%;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   text-align: center;
+   width: 100%;
 }
 .opinion h2 {
-  font-size: var(--fs-500);
-  font-family: var(--heading-font);
+   font-size: var(--fs-500);
+   font-family: var(--heading-font);
 }
 .opinion p {
-  font-size: var(--fs-400);
-  color: #707070;
-  font-family: var(--para-font);
+   font-size: var(--fs-400);
+   color: #707070;
+   font-family: var(--para-font);
 }
 .texts span {
-  font-size: var(--fs-xl);
-  font-weight: 900;
-  color: var(--main-color);
-  font-family: var(--heading-font);
-}
-.form-container {
-  background: var(--main-color);
-  width: 100%;
-  padding: 30px;
-  margin-top: 2.5rem;
-}
-.form-heading {
-  font-family: var(--para-font);
-  font-size: 1em;
-  color: var(--ter-color);
-}
-form,
-.inline-input {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-.form-input {
-  border: none;
-  border-radius: 3px;
-  padding: 0.7rem 1rem;
-  font-family: var(--para-font);
-  font-size: var(--fs-400);
-  color: var(--ter-color);
-}
-form button {
-  width: 100%;
-  font-size: var(--fs-400);
-  font-family: var(--heading-font);
-  font-weight: 500;
-  border: none;
-  border-radius: 3px;
-  padding: 0.7rem 1rem;
-  color: white;
-  background: var(--secondary-color);
-}
-.form-underline {
-  display: block;
-  width: 30px;
-  height: 5px;
-  background: var(--secondary-color);
-  margin: 10px auto 30px auto;
-  border-radius: 50px;
+   font-size: var(--fs-xl);
+   font-weight: 900;
+   color: var(--main-color);
+   font-family: var(--heading-font);
 }
 @media (min-width: 769px) {
-  .opinion {
-    display: flex;
-    flex-direction: row;
-  }
-  .texts {
-    margin-right: 10%;
-    text-align: left;
-  }
-  .texts p {
-    font-size: var(--fs-500);
-    margin-top: 1rem;
-  }
-  .form-container {
-    margin-top: 0rem;
-  }
+   .opinion {
+      display: flex;
+      flex-direction: row;
+   }
+   .texts {
+      padding-right: 10%;
+      text-align: left;
+      width: 60%;
+   }
+   .texts p {
+      font-size: var(--fs-500);
+      margin-top: 1rem;
+   }
 }
