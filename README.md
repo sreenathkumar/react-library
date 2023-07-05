@@ -6,7 +6,9 @@ The application is under development so there can be bugs. Apologise for that an
 Language Using:
 ===============
 ▶ HTML
+
 ▶ CSS
+
 ▶ Javascript
 
 Framework:
@@ -16,8 +18,11 @@ Framework:
 Features(planned):
 ==================
 ▶ Search for required books.
+
 ▶ Read books online.
+
 ▶ Download PDF for free.
+
 ▶ Available links to purchase.
 
 Live Preview:
