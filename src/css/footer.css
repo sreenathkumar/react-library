@@ -2,39 +2,40 @@
 * Footer style starts
 */
 footer {
-  padding: 1rem;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  background: black;
+   padding: 1rem;
+   display: flex;
+   flex-direction: row;
+   align-items: center;
+   justify-content: space-between;
+   background: var(--main-color);
+   border-top: 1px solid var(--secondary-color);
 }
 .footer-icons {
-  display: flex;
-  flex-direction: row;
-  gap: 10px;
+   display: flex;
+   flex-direction: row;
+   gap: 10px;
 }
 .footer-icons a svg {
-  height: 1rem;
-  width: auto;
-  color: var(--secondary-color);
-  cursor: pointer;
+   height: 1rem;
+   width: auto;
+   color: var(--secondary-color);
+   cursor: pointer;
 }
 .footer-icons a svg:hover {
-  font-size: 17px;
-  color: white;
-  transition: step-end;
+   font-size: 17px;
+   color: white;
+   transition: step-end;
 }
 .copyright {
-  font-size: 0.6em;
-  color: white;
+   font-size: 0.6em;
+   color: white;
 }
 .copyright a {
-  font-size: 1.1em;
-  color: var(--secondary-color);
-  margin-right: 5px;
+   font-size: 1.1em;
+   color: var(--secondary-color);
+   margin-right: 5px;
 }
 footer .copyright a:hover {
-  color: white !important;
-  text-decoration: none;
+   color: white !important;
+   text-decoration: none;
 }

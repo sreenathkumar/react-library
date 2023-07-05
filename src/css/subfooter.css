@@ -2,7 +2,7 @@
 * Sub Footer Style for Smaller Devices
 */
 #subfooter {
-   background: var(--ter-color);
+   background: var(--main-color);
 }
 .mission {
    display: flex;

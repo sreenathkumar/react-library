@@ -1,8 +1,8 @@
 :root {
-   --main-color: #fdde05;
-   --secondary-color: rgb(255 69 78);
-   --ter-color: #131211;
-   --ter-color-light: #676058;
+   --main-color: #333333;
+   --secondary-color: #fd7b2b; /* --rgb(255 69 78); */
+   --ter-color: white;
+   --ter-color-light: #ede0d4;
    --heading-font: "Arvo";
    --para-font: "Raleway";
    --fs-xl: clamp(0.5rem, 8vw, 2.5rem);

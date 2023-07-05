@@ -5,13 +5,13 @@
 .contact-texts h2 {
    font-family: var(--heading-font);
    font-size: var(--fs-600);
-   color: var(--ter-color);
+   color: var(--main-color);
    margin-bottom: 1rem;
 }
 .contact-texts p {
    font-family: var(--para-font);
    font-size: var(--fs-500);
-   color: var(--ter-color-light);
+   color: rgba(112, 112, 112, 1);
 }
 .social-links {
    text-align: center;

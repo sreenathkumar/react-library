@@ -1,5 +1,5 @@
 #counter {
-   background: #e8e8e8;
+   background: var(--main-color);
 }
 @media (min-width: 769px) {
    #counter {
