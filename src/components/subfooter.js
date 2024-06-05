@@ -1,6 +1,6 @@
 import "../css/subfooter.css";
-import SubfooterPost from "./subfooter-post";
-import Thumbnail from "../images/Group-3.png";
+// import SubfooterPost from "./subfooter-post";
+// import Thumbnail from "../images/Group-3.png";
 
 function Subfooter() {
   return (
@@ -89,12 +89,12 @@ function Subfooter() {
               </div>
             </div>
           </div>
-          <div className="recent-post">
+          {/* <div className="recent-post">
             <h3 className="block-title">Recent Posts</h3>
             <SubfooterPost image={Thumbnail}></SubfooterPost>
             <SubfooterPost image={Thumbnail}></SubfooterPost>
             <SubfooterPost image={Thumbnail}></SubfooterPost>
-          </div>
+          </div> */}
           <div className="quick-links">
             <h3 className="block-title">Quick Links</h3>
             <div className="link-list">

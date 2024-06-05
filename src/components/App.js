@@ -1,15 +1,15 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 
-import Header from "./header";
-import Footer from "./footer";
+import About from "../pages/About";
+import Blog from "../pages/Blog";
+import Categories from "../pages/Categories";
+import CategoryPage from "../pages/CategoryPage";
+import Contact from "../pages/Contact";
 import Home from "../pages/home";
 import SearchResult from "../pages/search-results";
 import SingleBook from "../pages/single-book";
-import About from "../pages/About";
-import Contact from "../pages/Contact";
-import Categories from "../pages/Categories";
-import Blog from "../pages/Blog";
-import CategoryPage from "../pages/CategoryPage";
+import Footer from "./footer";
+import Header from "./header";
 
 function App() {
   return (
