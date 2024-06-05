@@ -11,7 +11,7 @@ Language Using:
 
 ▶ Javascript
 
-Framework:
+Library:
 ==========
 ▶ React
 
