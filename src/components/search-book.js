@@ -1,99 +1,61 @@
 import "../css/search-book.css";
-import { Link } from "react-router-dom";
-import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
 
-function SearchBook(props) {
-  // ============================================== //
-  // Search in Google API
-  // ============================================== //
+function SearchBook() {
   const [searchQuery, setSearchQuery] = useState("");
   const [queryResult, setQueryResult] = useState([]);
+  const navigate = useNavigate();
 
-  async function getQueryResult(maxResult) {
-    const response = await fetch(
-      "https://www.googleapis.com/books/v1/volumes?q=" +
-        searchQuery +
-        "&maxResults=" +
-        maxResult
-    )
-      .then((res) => {
-        return res.json();
-      })
-      .then((data) => {
-        return data.items;
-      });
-    return console.log(response);
-  }
-
-  function dbounce(fn) {
-    let timer;
-    return function (...args) {
-      timer && clearTimeout(timer);
-      timer = setTimeout(() => {
-        fn(...args);
-      }, 500);
-    };
-  }
-  const debouncedFuction = dbounce((e) => {
-    handleInput(e);
-  });
-
-  function handleInput(e) {
-    console.log("inside handleInput");
-    setSearchQuery(e.target.value.trim());
-
-    // fetch(
-    //   "https://www.googleapis.com/books/v1/volumes?q=" +
-    //     searchQuery +
-    //     "&maxResults=5"
-    // )
-    //   .then((res) => {
-    //     return res.json();
-    //   })
-    //   .then((data) => {
-    //     let newList = [];
-    //     data.items.forEach((item) => {
-    //       newList.push(item);
-    //     });
-    //     setQueryResult(newList);
-    //   });
-    if (searchQuery.length !== 0) {
-      let res = getQueryResult(5);
-      res.then((data) => {
-        setQueryResult(data);
-      });
+  useEffect(() => {
+    if (searchQuery.trim() === "") {
+      setQueryResult([]);
+      return;
     }
+
+    let timer = setTimeout(() => {
+      getQueryResult(searchQuery).then((result) => {
+        setQueryResult(result);
+      });
+    }, 200);
+
+    // Cleanup function
+    return () => clearTimeout(timer);
+  }, [searchQuery]);
+
+  async function getQueryResult(query) {
+    const response = await fetch(
+      `https://www.googleapis.com/books/v1/volumes?q=${query}&maxResults=5`
+    );
+    const data = await response.json();
+    return data?.items || [];
   }
 
-  function handleSearch() {
-    getQueryResult(10);
+  function handleInputChange(event) {
+    setSearchQuery(event.target.value);
   }
 
   return (
     <div className="search-container">
-      <h1> Get Your Favourite Book</h1>
+      <h1>Get Your Favourite Book</h1>
       <div className="search-block">
         <div className="inputNresult">
           <input
             placeholder="Enter Title, Author, ISBN"
-            onChange={(e) => {
-              debouncedFuction(e);
-            }}
-          ></input>
+            onChange={handleInputChange}
+            value={searchQuery}
+          />
           <ul
             className={
-              queryResult.length === 0 ? "hide-result" : "search-result"
+              queryResult?.length === 0 ? "hide-result" : "search-result"
             }
           >
-            {queryResult.map((item) => (
+            {queryResult?.map((item) => (
               <li key={item.id}>
                 <Link
-                  to={
-                    "/" +
-                    item.volumeInfo.title.replace(/ /g, "-") +
-                    "/ID=" +
-                    item.id
-                  }
+                  to={`/${item.volumeInfo.title.replace(/ /g, "-")}/ID=${
+                    item?.volumeInfo?.industryIdentifiers?.[0]?.identifier
+                  }`}
                 >
                   {item.volumeInfo.title}
                 </Link>
@@ -101,7 +63,14 @@ function SearchBook(props) {
             ))}
           </ul>
         </div>
-        <button onClick={handleSearch}>Search Book</button>
+        <button
+          onClick={() =>
+            searchQuery?.length > 0 &&
+            navigate(`/search-result?query=${searchQuery}`)
+          }
+        >
+          Search Book
+        </button>
       </div>
     </div>
   );
