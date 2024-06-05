@@ -2,13 +2,12 @@ import { Link } from "react-router-dom";
 import "../css/book-card.css";
 
 function BookCard(props) {
-
-
+  const url = "/" + props.title.replace(/ /g, "-") + "/ID=" + props.isbn;
   return (
     <div className="card-container">
       <div className="img-container">
         <Link
-          to={"../" + props.title.replace(/ /g, "-") + "/ID=" + props.isbn}
+          to={url}
           state={{
             buyUrl: props.buyUrl,
             imgUrl: props.img,
@@ -23,9 +22,9 @@ function BookCard(props) {
           </div>
         </Link>
       </div>
-      <a href="/" className="book-title">
+      <Link to={url} className="book-title">
         {props.title}
-      </a>
+      </Link>
       <a href="/" className="author-name">
         {props.author}
       </a>
