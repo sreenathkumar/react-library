@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import "../css/book-card.css";
 
 function BookCard(props) {
-  const url = "/" + props.title.replace(/ /g, "-") + "/ID=" + props.isbn;
+  const url = "/" + props.title.replace(/ /g, "-") + "?id=" + props.isbn;
   return (
     <div className="card-container">
       <div className="img-container">

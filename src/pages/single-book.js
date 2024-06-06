@@ -1,32 +1,12 @@
-import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useLoaderData } from "react-router-dom";
 import "../css/single-book.css";
 
 function SingleBook() {
-  const [theBook, setTheBook] = useState(null);
-  const { id } = useParams();
-  console.log("the book: ", theBook?.volumeInfo);
+  const theBook = useLoaderData();
 
   function capitalizeFirstLetter(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
   }
-
-  // Fetching the book from the API
-  useEffect(() => {
-    async function getTheBook() {
-      let url = "https://www.googleapis.com/books/v1/volumes?q=+isbn:" + id;
-      await fetch(url)
-        .then((res) => {
-          return res.json();
-        })
-        .then((data) => {
-          if (data?.totalItems !== 0) {
-            setTheBook(...data.items);
-          }
-        });
-    }
-    getTheBook();
-  }, [id]);
 
   return (
     <div className="container">
@@ -54,11 +34,6 @@ function SingleBook() {
                   {theBook.volumeInfo.description.length > 450
                     ? theBook.volumeInfo.description.substring(0, 450) + "..."
                     : theBook.volumeInfo.description}
-                  {/*theBook.searchInfo
-                      ? theBook.searchInfo.textSnippet.length !== 0
-                        ? theBook.searchInfo.textSnippet
-                        : theBook.volumeInfo.description
-          : theBook.volumeInfo.description*/}
                 </p>
               </div>
               <div className="button-group">
