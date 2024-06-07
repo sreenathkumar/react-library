@@ -1,10 +1,12 @@
 import "../css/search-book.css";
 import { Link, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
+import { useSearch } from "../contexts/searchContext";
 
 function SearchBook() {
   const [searchQuery, setSearchQuery] = useState("");
   const [queryResult, setQueryResult] = useState([]);
+  const { updateSearchResult } = useSearch();
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -53,7 +55,7 @@ function SearchBook() {
             {queryResult?.map((item) => (
               <li key={item.id}>
                 <Link
-                  to={`/${item.volumeInfo.title.replace(/ /g, "-")}/ID=${
+                  to={`/${item.volumeInfo.title.replace(/ /g, "-")}?id=${
                     item?.volumeInfo?.industryIdentifiers?.[0]?.identifier
                   }`}
                 >
@@ -64,10 +66,11 @@ function SearchBook() {
           </ul>
         </div>
         <button
-          onClick={() =>
+          onClick={() => {
+            updateSearchResult(queryResult);
             searchQuery?.length > 0 &&
-            navigate(`/search-result?query=${searchQuery}`)
-          }
+              navigate(`/search-result?query=${searchQuery}`);
+          }}
         >
           Search Book
         </button>

@@ -9,6 +9,7 @@ import SearchResult from "../pages/search-results";
 import SingleBook from "../pages/single-book";
 import { singleBookLoader } from "../loaders/singleBookLoader";
 import { categoryProductsLoader } from "../loaders/categoryProductsLoader";
+import { searchResultLoader } from "../loaders/searchResultLoader";
 
 export const router = createBrowserRouter([
   {
@@ -24,7 +25,11 @@ export const router = createBrowserRouter([
         element: <CategoryPage />,
         loader: categoryProductsLoader,
       },
-      { path: "search-result", element: <SearchResult /> },
+      {
+        path: "search-result",
+        element: <SearchResult />,
+        loader: searchResultLoader,
+      },
       { path: ":title", element: <SingleBook />, loader: singleBookLoader },
     ],
   },

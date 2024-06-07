@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import "../css/book-card.css";
+import noCover from "../images/Not found cover.png";
 
 function BookCard(props) {
   const url = "/" + props.title.replace(/ /g, "-") + "?id=" + props.isbn;
@@ -18,7 +19,11 @@ function BookCard(props) {
           }}
         >
           <div className="builder-image-sizer image-sizer">
-            <img alt="book-thumbnail" src={props.img} className="image" />
+            <img
+              alt="book-thumbnail"
+              src={props.img || noCover}
+              className="image"
+            />
           </div>
         </Link>
       </div>
