@@ -1,36 +1,18 @@
-import { useEffect } from "react";
-import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 import "../css/header.css";
 import Logo from "../images/logo.svg";
 
 function Header() {
-  useEffect(() => {
-    // add active class to menu items on page load
-    const path = window.location.pathname.replaceAll("/", "");
-    if (path !== "") {
-      const domEle = document.getElementsByClassName("mobile-menu-container");
-      const domChilds = domEle[0].childNodes;
-      domChilds.forEach((item) => {
-        if (item.innerText.toLowerCase().replace(/ /g, "-") === path) {
-          item.classList.add("active");
-        } else {
-          item.classList.remove("active");
-        }
-      });
-    }
-  }, []);
+  const location = useLocation();
+  const [activePath, setActivePath] = useState(location.pathname);
 
-  // add active class  to menu item on click
-  const addActiveClass = (e) => {
-    const activeExists = e.target.classList.contains("active");
-    if (!activeExists) {
-      const ele = document.getElementsByClassName("mobile-menu-container");
-      const childs = ele[0].childNodes;
-      childs.forEach((item) => {
-        item.classList.remove("active");
-      });
-      e.target.classList.add("active");
-    }
+  useEffect(() => {
+    setActivePath(location.pathname);
+  }, [location]);
+
+  const handleLinkClick = (path) => {
+    setActivePath(path);
   };
 
   return (
@@ -44,34 +26,40 @@ function Header() {
             <div className="mobile-menu" id="mobile-menu-panel">
               <div className="mobile-menu-container">
                 <Link
-                  className="nav-link  active"
-                  onClick={addActiveClass}
+                  className={`nav-link ${activePath === "/" ? "active" : ""}`}
+                  onClick={() => handleLinkClick("/")}
                   to="/"
                 >
                   Home
                 </Link>
                 <Link
-                  className="nav-link"
-                  onClick={addActiveClass}
+                  className={`nav-link ${
+                    activePath === "/about-us" ? "active" : ""
+                  }`}
+                  onClick={() => handleLinkClick("/about-us")}
                   to="/about-us"
                 >
                   About Us
                 </Link>
                 <Link
-                  className="nav-link"
-                  onClick={addActiveClass}
+                  className={`nav-link ${
+                    activePath === "/contact-us" ? "active" : ""
+                  }`}
+                  onClick={() => handleLinkClick("/contact-us")}
                   to="/contact-us"
                 >
                   Contact Us
                 </Link>
                 <Link
-                  className="nav-link"
-                  onClick={addActiveClass}
+                  className={`nav-link ${
+                    activePath === "/categories" ? "active" : ""
+                  }`}
+                  onClick={() => handleLinkClick("/categories")}
                   to="/categories"
                 >
                   Categories
                 </Link>
-                {/* <Link className="nav-link" onClick={addActiveClass} to="/blog">
+                {/* <Link className={`nav-link ${activePath === "/blog" ? "active" : ""}`} onClick={() => handleLinkClick("/blog")} to="/blog">
                   Blog
                 </Link> */}
               </div>
