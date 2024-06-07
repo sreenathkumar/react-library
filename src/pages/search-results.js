@@ -6,8 +6,6 @@ function SearchResult() {
   const query = params.get("query");
   const resultData = useLoaderData();
 
-  console.log("resultData", resultData);
-
   return (
     <section id="searched-book-list">
       <div className="container book-list">
